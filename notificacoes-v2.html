@@ -1,0 +1,115 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0B;--card:#141416;--card2:#1B1B1E;--line:#26262B;--tx:#F4F1EA;--mu:#8E8C88;--teal:#1E9AA8;--coral:#F2614C;--amber:#F2A93B;--up:#4FD69C;--ivory:#F4F1EA}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#2a2a2d;font-family:Inter,sans-serif;color:var(--tx);display:flex;gap:48px;padding:48px;width:max-content}
+.phone{width:390px;height:844px;background:var(--bg);border-radius:48px;overflow:hidden;position:relative;box-shadow:0 0 0 10px #000,0 0 0 11px #333}
+.sb{height:47px;display:flex;justify-content:space-between;align-items:center;padding:14px 30px 0;font-size:15px;font-weight:600}
+.sb i{font-style:normal;letter-spacing:2px;font-size:11px}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.pill{border-radius:999px;border:0;font:600 16px Inter;height:54px;width:100%;display:flex;align-items:center;justify-content:center;gap:8px}
+.p-ivory{background:var(--ivory);color:#0A0A0B}.p-ghost{background:var(--card2);color:var(--tx);border:1px solid var(--line)}
+.mu{color:var(--mu)}.pad{padding:0 20px}
+.badge{display:inline-flex;align-items:center;gap:4px;background:rgba(79,214,156,.12);color:var(--up);font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
+.tag{font-size:11px;font-weight:500;padding:4px 9px;border-radius:999px;border:1px solid var(--line);color:var(--mu)}
+.home-ind{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#fff}
+.ico{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;flex:none}
+.row{display:flex;align-items:center;gap:12px}
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin:22px 0 12px}
+.sec h3{font-size:17px;font-weight:600}.sec span{font-size:13px;color:var(--mu)}
+/* login */
+#login .glow{position:absolute;top:120px;left:50%;transform:translateX(-50%);width:380px;height:380px;background:radial-gradient(circle,rgba(30,154,168,.35),transparent 65%)}
+#login .globe{position:absolute;top:110px;left:50%;transform:translateX(-50%);width:240px}
+#login .logo{height:30px;display:block;margin:22px auto 0}
+#login .bottom{position:absolute;bottom:34px;left:24px;right:24px}
+#login h1{font-size:44px;line-height:1.02;text-align:center;letter-spacing:-.5px}
+#login h1 em{color:var(--teal)}
+#login p.lead{text-align:center;color:var(--mu);font-size:15px;line-height:1.45;margin:14px 6px 26px}
+.legal{font-size:11px;color:#5d5b58;text-align:center;margin-top:16px;line-height:1.5}
+/* home */
+.top{display:flex;justify-content:space-between;align-items:center;padding:6px 20px 0}
+.av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--coral));display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px}
+.icbtn{width:36px;height:36px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;color:var(--mu)}
+.bal{font-size:54px;letter-spacing:-1px;line-height:1;margin-top:6px}
+.bal small{font-size:30px;color:var(--mu)}
+.alloc{display:flex;height:8px;border-radius:4px;overflow:hidden;gap:3px;margin:16px 0 10px}
+.leg{display:flex;gap:14px;font-size:12px;color:var(--mu)}.leg b{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.acts{display:flex;gap:10px;margin-top:18px}
+.acts .pill{height:46px;font-size:14px;width:auto;flex:1;white-space:nowrap}.acts .pill.p-ivory{flex:1.5}
+.car{display:flex;gap:12px;overflow:hidden;margin-right:-20px}
+.opp{flex:none;width:236px;border-radius:22px;padding:16px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.opp .k{font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.opp h4{font-size:24px;line-height:1.05;margin:10px 0 14px}
+.opp .y{font-size:30px}
+.hold{background:var(--card);border-radius:20px;padding:4px 14px;border:1px solid var(--line)}
+.hold .row{padding:11px 0;border-bottom:1px solid var(--line)}.hold .row:last-child{border:0}
+.hold .n{font-size:14px;font-weight:500}.hold .s{font-size:12px;color:var(--mu);margin-top:2px}
+.hold .v{white-space:nowrap;margin-left:auto;text-align:right;font-size:14px;font-weight:500}
+.up{color:var(--up);font-size:12px;margin-top:2px}
+.nav{position:absolute;bottom:26px;left:16px;right:16px;display:flex;gap:10px;align-items:center}
+.tabs{flex:1;display:flex;background:rgba(28,28,31,.92);backdrop-filter:blur(20px);border:1px solid var(--line);border-radius:999px;padding:5px;justify-content:space-between}
+.tabs div{font-size:12px;padding:10px 12px;border-radius:999px;color:var(--mu)}
+.tabs .on{background:var(--ivory);color:#0A0A0B;font-weight:600}
+.fab{width:56px;height:56px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 24px rgba(30,154,168,.45)}
+.fade{position:absolute;bottom:0;left:0;right:0;height:130px;background:linear-gradient(transparent,var(--bg) 60%)}
+.scroll{height:calc(844px - 47px);overflow:hidden}
+/* detail */
+.hero{margin:10px 20px 0;border-radius:26px;padding:20px;background:radial-gradient(120% 90% at 100% 0%,rgba(30,154,168,.45),transparent 60%),var(--card);border:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kv{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px}
+.kv .l{font-size:12px;color:var(--mu)}.kv .val{font-size:22px;margin-top:4px}
+.risk{display:flex;gap:4px;margin-top:8px}.risk i{flex:1;height:5px;border-radius:3px;background:#2c2c31}
+.tok .row{justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.tok .row:last-child{border:0}
+.mono{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.cta{position:absolute;bottom:0;left:0;right:0;padding:14px 20px 30px;background:linear-gradient(transparent,var(--bg) 25%);display:flex;gap:10px}
+/* originar */
+.steps{display:flex;gap:6px;margin:14px 0 22px}.steps i{flex:1;height:4px;border-radius:2px;background:#2c2c31}.steps i.on{background:var(--ivory)}
+.opt{border:1px solid var(--line);background:var(--card);border-radius:22px;padding:16px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start}
+.opt.sel{border-color:var(--teal);background:linear-gradient(var(--card),var(--card)) padding-box;box-shadow:0 0 0 1px var(--teal) inset}
+.opt h5{font-size:16px;font-weight:600}.opt p{font-size:13px;color:var(--mu);line-height:1.4;margin-top:4px}
+.radio{width:22px;height:22px;border-radius:50%;border:2px solid #3a3a40;margin-left:auto;flex:none}
+.sel .radio{border:6px solid var(--teal)}
+.oi{width:44px;height:44px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center}
+
+.icbtn svg{width:18px;height:18px;stroke:var(--tx);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.icbtn{position:relative}.dot{position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--coral);border:1.5px solid var(--card2)}
+.pine{background:var(--ivory)}.pine svg{stroke:#0A0A0B;transform:rotate(-16deg);stroke-width:1.9}
+.search{margin:14px 20px 0;height:44px;border-radius:999px;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:0 16px;color:var(--mu);font-size:14px}
+.search svg{width:16px;height:16px;stroke:var(--mu);fill:none;stroke-width:2}
+.cash{margin-top:14px;display:flex;justify-content:space-between;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:11px 14px}
+.alloc2{display:flex;height:5px;border-radius:3px;overflow:hidden;gap:2px;margin:16px 0 8px}
+.leg2{display:flex;justify-content:space-between;font-size:11px;color:var(--mu)}.leg2 b{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:5px;vertical-align:1px}
+.acts2{display:flex;gap:10px;margin-top:16px}.acts2 .pill{height:48px;font-size:15px;flex:1;width:auto}
+.menu{position:absolute;top:104px;left:16px;width:250px;background:#1B1B1E;border:1px solid #2f2f35;border-radius:20px;padding:8px;box-shadow:0 20px 60px rgba(0,0,0,.7);z-index:5}
+.menu .mi{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;font-size:15px}
+.menu .mi svg{width:18px;height:18px;stroke:var(--mu);fill:none;stroke-width:1.7}
+.menu .mi.on{background:#26262b}.menu hr{border:0;border-top:1px solid var(--line);margin:6px 4px}
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.55);z-index:4}
+</style><style>em,i:not(.sb i){font-style:normal}
+.phone.tall{height:1340px}
+.gl{font-size:12px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin:22px 2px 10px}
+.nt{display:flex;gap:12px;padding:14px;border-radius:18px;background:var(--card);border:1px solid var(--line);margin-bottom:8px;position:relative}
+.nt.un{background:#1C1C20;border-color:#2f2f35}
+.nt .ico svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.nt .t{font-size:14px;font-weight:600;padding-right:52px}.nt .d{padding-right:20px;font-size:12.5px;color:var(--mu);line-height:1.4;margin-top:3px}
+.nt .tm{position:absolute;right:14px;top:15px;font-size:11.5px;color:var(--mu)}
+.nt .dot{position:absolute;right:16px;top:36px;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+</style></head><body><div class="phone tall" id="p"><div class="sb"><span>9:41</span><i>●●● ▮</i></div>
+<div class="top"><div class="icbtn" style="font-size:22px;color:var(--tx)">‹</div><div style="color:var(--teal);font-size:13px;font-weight:600">Marcar todas como lidas</div></div>
+<div class="pad" style="margin-top:16px">
+<h1 class="serif" style="font-size:40px;font-weight:400;line-height:1">Notificações</h1>
+<div class="gl">Hoje</div>
+<div class="nt un"><div class="ico" style="background:rgba(30,154,168,.16);color:var(--teal)"><svg viewBox="0 0 24 24"><path d="M12 3v11M7.5 9.5L12 14l4.5-4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div><div><div class="t">Depósito executado</div><div class="d">R$&nbsp;20.000,00 via Pix creditados no seu Cash.</div></div><span class="tm">11:30</span><span class=dot></span></div>
+<div class="nt un"><div class="ico" style="background:rgba(244,241,234,.16);color:var(--ivory)"><svg viewBox="0 0 24 24"><path d="M12 14V3M7.5 7.5L12 3l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div><div><div class="t">Resgate executado</div><div class="d">R$&nbsp;5.000,00 enviados para sua conta Itaú final 4821.</div></div><span class="tm">10:48</span><span class=dot></span></div>
+<div class="nt un"><div class="ico" style="background:rgba(30,154,168,.16);color:var(--teal)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.5 10a2 2 0 0 1 2-1.5h1.2a1.8 1.8 0 0 1 0 3.5h-1.4a1.8 1.8 0 0 0 0 3.5h1.2a2 2 0 0 0 2-1.5"/></svg></div><div><div class="t">Rendimento creditado</div><div class="d">R$ 3.712,50 de FIDC Recebíveis Saúde creditados no seu Cash.</div></div><span class="tm">09:12</span><span class=dot></span></div>
+<div class="nt un"><div class="ico" style="background:rgba(242,97,76,.16);color:var(--coral)"><svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M19 8v6M16 11h6"/></svg></div><div><div class="t">Novo investidor originado</div><div class="d">Carlos Menezes investiu R$&nbsp;180.000,00 em CRA Agro Cerrado Sênior II, com comissão de +R$&nbsp;1.800,00.</div></div><span class="tm">08:40</span><span class=dot></span></div>
+<div class="nt un"><div class="ico" style="background:rgba(244,241,234,.16);color:var(--ivory)"><svg viewBox="0 0 24 24"><path d="M20 11.5a7.5 7 0 0 1-10.6 6.4L4.5 19.5l1.4-3.9A7 7 0 0 1 4.5 11.5 7.5 7 0 0 1 12 4.5"/><path d="M18 2.5l.9 2.4 2.4.9-2.4.9-.9 2.4-.9-2.4-2.4-.9 2.4-.9z" fill="currentColor" stroke-width="1"/></svg></div><div><div class="t">Mensagem do suporte</div><div class="d">Respondemos sua dúvida sobre a tributação de CRI.</div></div><span class="tm">07:55</span><span class=dot></span></div>
+<div class="gl">Ontem</div>
+<div class="nt"><div class="ico" style="background:rgba(30,154,168,.16);color:var(--teal)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.5l2.7 2.7L16 9.8"/></svg></div><div><div class="t">Captação concluída</div><div class="d">CRI XPTO Logística I atingiu 100% da captação. Seus tokens serão emitidos em até 2 dias úteis.</div></div><span class="tm">18:20</span></div>
+<div class="nt"><div class="ico" style="background:rgba(242,169,59,.16);color:var(--amber)"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4l2.5 2M9 3h6"/></svg></div><div><div class="t">Alerta de prazo</div><div class="d">A captação da Debênture Exemplo #1 encerra em 3 dias.</div></div><span class="tm">10:05</span></div>
+<div class="gl">Mais antigas</div>
+<div class="nt"><div class="ico" style="background:rgba(244,241,234,.16);color:var(--ivory)"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg></div><div><div class="t">Documento disponível</div><div class="d">Seu informe de rendimentos 2025 já pode ser baixado.</div></div><span class="tm">15/10</span></div>
+<div class="nt"><div class="ico" style="background:rgba(30,154,168,.16);color:var(--teal)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.5 10a2 2 0 0 1 2-1.5h1.2a1.8 1.8 0 0 1 0 3.5h-1.4a1.8 1.8 0 0 0 0 3.5h1.2a2 2 0 0 0 2-1.5"/></svg></div><div><div class="t">Rendimento creditado</div><div class="d">R$ 2.106,40 de CRI Logística Sul creditados no seu Cash.</div></div><span class="tm">12/10</span></div>
+<div class="nt"><div class="ico" style="background:rgba(242,169,59,.16);color:var(--amber)"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4l2.5 2M9 3h6"/></svg></div><div><div class="t">Alerta de prazo</div><div class="d">Atualize seus dados cadastrais até 31/10 para continuar investindo.</div></div><span class="tm">10/10</span></div>
+</div><div class="home-ind"></div></div></body></html>

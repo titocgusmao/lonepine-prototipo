@@ -1,0 +1,31 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Lonepine · Protótipos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0B;--fg:#F4F1EA;--mut:#8a877f;--line:#222;--ac:#1E9AA8}
+body.claro{--bg:#fff;--fg:#1a1a1a;--mut:#767676;--line:#e6e6e6;--ac:#14707A}
+*{box-sizing:border-box}body{margin:0;height:100vh;display:flex;background:var(--bg);color:var(--fg);font-family:Inter,sans-serif;transition:background .2s}
+nav{width:260px;border-right:1px solid var(--line);padding:24px 16px;overflow:auto;display:flex;flex-direction:column;gap:2px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:28px;margin:0 0 16px 8px}
+.tog{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;margin-bottom:16px}
+.tog button{flex:1;border:0;background:none;color:var(--mut);padding:8px;border-radius:999px;cursor:pointer;font:500 13px Inter}
+.tog button.on{background:var(--fg);color:var(--bg)}
+nav a{padding:9px 10px;border-radius:8px;color:var(--mut);text-decoration:none;font-size:14px;cursor:pointer}
+nav a:hover{color:var(--fg)}nav a.on{color:var(--fg);background:color-mix(in srgb,var(--ac) 18%,transparent)}
+.hint{margin-top:auto;font-size:12px;color:var(--mut);padding:8px}
+main{flex:1;display:flex;align-items:center;justify-content:center;overflow:auto}
+iframe{width:430px;height:900px;border:0;transform-origin:center;}
+</style></head><body>
+<nav><h1>Lonepine</h1>
+<div class="tog"><button id="bE" class="on">Escuro</button><button id="bC">Claro</button></div>
+<div id="list"></div><div class="hint">Setas ↑ ↓ trocam de tela · T alterna o tema</div></nav>
+<main><iframe id="f"></iframe></main>
+<script>
+const T=[["Splash","splash-animado"],["Login","login-v5-animado"],["Home","home-v17"],["Menu","home-v17-menu-v4"],["Cash","home-v17-cash"],["Convite","home-v17-convite-v4"],["Originar","originar-v2"],["Originar Dívida","originar-divida"],["Originar Equity","originar-cadastro"],["Buscar","busca-v3"],["Notificações","notificacoes-v2"],["Oportunidades","oportunidades-v2"],["Chat","chat"],["Meus investimentos","meus-investimentos-v5"]];
+let i=0,claro=false;const h=location.hash.slice(1).split(",");if(h[0])i=Math.max(0,T.findIndex(t=>t[1]==h[0]));claro=h[1]=="claro";
+const L=document.getElementById("list");T.forEach((t,k)=>{const a=document.createElement("a");a.textContent=t[0];a.onclick=()=>{i=k;go()};L.appendChild(a)});
+function fit(){const m=document.querySelector("main");const s=Math.min(1,(m.clientHeight-20)/900);f.style.transform=`scale(${s})`}
+function go(){f.src=T[i][1]+(claro?"-claro":"")+".html";document.body.classList.toggle("claro",claro);bE.classList.toggle("on",!claro);bC.classList.toggle("on",claro);[...L.children].forEach((a,k)=>a.classList.toggle("on",k==i));history.replaceState(0,"","#"+T[i][1]+(claro?",claro":""))}
+bE.onclick=()=>{claro=false;go()};bC.onclick=()=>{claro=true;go()};
+onkeydown=e=>{if(e.key=="ArrowDown"){i=(i+1)%T.length;go()}if(e.key=="ArrowUp"){i=(i+T.length-1)%T.length;go()}if(e.key.toLowerCase()=="t"){claro=!claro;go()}};
+onresize=fit;fit();go();
+</script></body></html>

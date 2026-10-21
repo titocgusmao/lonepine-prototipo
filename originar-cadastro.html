@@ -1,0 +1,145 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0B;--card:#141416;--card2:#1B1B1E;--line:#26262B;--tx:#F4F1EA;--mu:#8E8C88;--teal:#1E9AA8;--coral:#F2614C;--amber:#F2A93B;--up:#4FD69C;--ivory:#F4F1EA}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#2a2a2d;font-family:Inter,sans-serif;color:var(--tx);display:flex;gap:48px;padding:48px;width:max-content}
+.phone{width:390px;height:844px;background:var(--bg);border-radius:48px;overflow:hidden;position:relative;box-shadow:0 0 0 10px #000,0 0 0 11px #333}
+.sb{height:47px;display:flex;justify-content:space-between;align-items:center;padding:14px 30px 0;font-size:15px;font-weight:600}
+.sb i{font-style:normal;letter-spacing:2px;font-size:11px}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.pill{border-radius:999px;border:0;font:600 16px Inter;height:54px;width:100%;display:flex;align-items:center;justify-content:center;gap:8px}
+.p-ivory{background:var(--ivory);color:#0A0A0B}.p-ghost{background:var(--card2);color:var(--tx);border:1px solid var(--line)}
+.mu{color:var(--mu)}.pad{padding:0 20px}
+.badge{display:inline-flex;align-items:center;gap:4px;background:rgba(79,214,156,.12);color:var(--up);font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
+.tag{font-size:11px;font-weight:500;padding:4px 9px;border-radius:999px;border:1px solid var(--line);color:var(--mu)}
+.home-ind{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#fff}
+.ico{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;flex:none}
+.row{display:flex;align-items:center;gap:12px}
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin:22px 0 12px}
+.sec h3{font-size:17px;font-weight:600}.sec span{font-size:13px;color:var(--mu)}
+/* login */
+#login .glow{position:absolute;top:120px;left:50%;transform:translateX(-50%);width:380px;height:380px;background:radial-gradient(circle,rgba(30,154,168,.35),transparent 65%)}
+#login .globe{position:absolute;top:110px;left:50%;transform:translateX(-50%);width:240px}
+#login .logo{height:30px;display:block;margin:22px auto 0}
+#login .bottom{position:absolute;bottom:34px;left:24px;right:24px}
+#login h1{font-size:44px;line-height:1.02;text-align:center;letter-spacing:-.5px}
+#login h1 em{color:var(--teal)}
+#login p.lead{text-align:center;color:var(--mu);font-size:15px;line-height:1.45;margin:14px 6px 26px}
+.legal{font-size:11px;color:#5d5b58;text-align:center;margin-top:16px;line-height:1.5}
+/* home */
+.top{display:flex;justify-content:space-between;align-items:center;padding:6px 20px 0}
+.av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--coral));display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px}
+.icbtn{width:36px;height:36px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;color:var(--mu)}
+.bal{font-size:54px;letter-spacing:-1px;line-height:1;margin-top:6px}
+.bal small{font-size:30px;color:var(--mu)}
+.alloc{display:flex;height:8px;border-radius:4px;overflow:hidden;gap:3px;margin:16px 0 10px}
+.leg{display:flex;gap:14px;font-size:12px;color:var(--mu)}.leg b{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.acts{display:flex;gap:10px;margin-top:18px}
+.acts .pill{height:46px;font-size:14px;width:auto;flex:1;white-space:nowrap}.acts .pill.p-ivory{flex:1.5}
+.car{display:flex;gap:12px;overflow:hidden;margin-right:-20px}
+.opp{flex:none;width:236px;border-radius:22px;padding:16px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.opp .k{font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.opp h4{font-size:24px;line-height:1.05;margin:10px 0 14px}
+.opp .y{font-size:30px}
+.hold{background:var(--card);border-radius:20px;padding:4px 14px;border:1px solid var(--line)}
+.hold .row{padding:11px 0;border-bottom:1px solid var(--line)}.hold .row:last-child{border:0}
+.hold .n{font-size:14px;font-weight:500}.hold .s{font-size:12px;color:var(--mu);margin-top:2px}
+.hold .v{white-space:nowrap;margin-left:auto;text-align:right;font-size:14px;font-weight:500}
+.up{color:var(--up);font-size:12px;margin-top:2px}
+.nav{position:absolute;bottom:26px;left:16px;right:16px;display:flex;gap:10px;align-items:center}
+.tabs{flex:1;display:flex;background:rgba(28,28,31,.92);backdrop-filter:blur(20px);border:1px solid var(--line);border-radius:999px;padding:5px;justify-content:space-between}
+.tabs div{font-size:12px;padding:10px 12px;border-radius:999px;color:var(--mu)}
+.tabs .on{background:var(--ivory);color:#0A0A0B;font-weight:600}
+.fab{width:56px;height:56px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 24px rgba(30,154,168,.45)}
+.fade{position:absolute;bottom:0;left:0;right:0;height:130px;background:linear-gradient(transparent,var(--bg) 60%)}
+.scroll{height:calc(844px - 47px);overflow:hidden}
+/* detail */
+.hero{margin:10px 20px 0;border-radius:26px;padding:20px;background:radial-gradient(120% 90% at 100% 0%,rgba(30,154,168,.45),transparent 60%),var(--card);border:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kv{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px}
+.kv .l{font-size:12px;color:var(--mu)}.kv .val{font-size:22px;margin-top:4px}
+.risk{display:flex;gap:4px;margin-top:8px}.risk i{flex:1;height:5px;border-radius:3px;background:#2c2c31}
+.tok .row{justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.tok .row:last-child{border:0}
+.mono{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.cta{position:absolute;bottom:0;left:0;right:0;padding:14px 20px 30px;background:linear-gradient(transparent,var(--bg) 25%);display:flex;gap:10px}
+/* originar */
+.steps{display:flex;gap:6px;margin:14px 0 22px}.steps i{flex:1;height:4px;border-radius:2px;background:#2c2c31}.steps i.on{background:var(--ivory)}
+.opt{border:1px solid var(--line);background:var(--card);border-radius:22px;padding:16px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start}
+.opt.sel{border-color:var(--teal);background:linear-gradient(var(--card),var(--card)) padding-box;box-shadow:0 0 0 1px var(--teal) inset}
+.opt h5{font-size:16px;font-weight:600}.opt p{font-size:13px;color:var(--mu);line-height:1.4;margin-top:4px}
+.radio{width:22px;height:22px;border-radius:50%;border:2px solid #3a3a40;margin-left:auto;flex:none}
+.sel .radio{border:6px solid var(--teal)}
+.oi{width:44px;height:44px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center}
+
+.icbtn svg{width:18px;height:18px;stroke:var(--tx);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.icbtn{position:relative}.dot{position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--coral);border:1.5px solid var(--card2)}
+.pine{background:var(--ivory)}.pine svg{stroke:#0A0A0B;transform:rotate(-16deg);stroke-width:1.9}
+.search{margin:14px 20px 0;height:44px;border-radius:999px;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:0 16px;color:var(--mu);font-size:14px}
+.search svg{width:16px;height:16px;stroke:var(--mu);fill:none;stroke-width:2}
+.cash{margin-top:14px;display:flex;justify-content:space-between;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:11px 14px}
+.alloc2{display:flex;height:5px;border-radius:3px;overflow:hidden;gap:2px;margin:16px 0 8px}
+.leg2{display:flex;justify-content:space-between;font-size:11px;color:var(--mu)}.leg2 b{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:5px;vertical-align:1px}
+.acts2{display:flex;gap:10px;margin-top:16px}.acts2 .pill{height:48px;font-size:15px;flex:1;width:auto}
+.menu{position:absolute;top:104px;left:16px;width:250px;background:#1B1B1E;border:1px solid #2f2f35;border-radius:20px;padding:8px;box-shadow:0 20px 60px rgba(0,0,0,.7);z-index:5}
+.menu .mi{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;font-size:15px}
+.menu .mi svg{width:18px;height:18px;stroke:var(--mu);fill:none;stroke-width:1.7}
+.menu .mi.on{background:#26262b}.menu hr{border:0;border-top:1px solid var(--line);margin:6px 4px}
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.55);z-index:4}
+.lc{display:flex;gap:14px;align-items:flex-start;border-radius:22px;background:var(--card);border:1px solid #2a2a2f;padding:16px;margin-bottom:12px;position:relative}
+.lc .ib{width:48px;height:48px;border-radius:15px;background:rgba(30,154,168,.14);display:flex;align-items:center;justify-content:center;flex:none}
+.lc svg{width:24px;height:24px;fill:none;stroke:var(--teal);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.lc h5{font-size:16px;font-weight:600}.lc p{font-size:13px;color:var(--mu);line-height:1.4;margin-top:4px;padding-right:14px}
+.tg{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;background:rgba(30,154,168,.16);color:var(--teal);margin-left:8px;vertical-align:2px}
+.lc .ar{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--mu);font-size:18px}.phone.tall{height:1720px}
+.chipsel{display:inline-flex;align-items:center;gap:10px;font-size:13px;padding:7px 8px 7px 12px;border-radius:999px;background:rgba(30,154,168,.14);color:var(--teal);font-weight:600}
+.chipsel u{color:var(--tx);font-weight:500;text-decoration:none;background:#26262b;padding:3px 10px;border-radius:999px;font-size:12px}
+.sh2{font-size:12px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin:28px 0 10px}
+.fl2{margin-bottom:12px}.fl2 label{display:block;font-size:12px;color:var(--mu);margin:0 0 6px 2px}
+.in{background:var(--card);border:1px solid #2a2a2f;border-radius:14px;padding:14px;font-size:15px;display:flex;align-items:center;justify-content:space-between}
+.in.ph{color:#5d5b58}.in.foc{border-color:var(--teal)}
+.ta{min-height:120px;align-items:flex-start;flex-direction:column;line-height:1.45;font-size:14px}
+.cnt{align-self:flex-end;font-size:11px;color:var(--mu);margin-top:8px}
+.media{display:grid;grid-template-columns:2fr 1fr;gap:10px}
+.cover{height:190px;border-radius:18px;position:relative;overflow:hidden;background:linear-gradient(180deg,#1b3a4a 0%,#0f2230 55%,#0b1820 100%)}
+.slot{height:90px;border-radius:16px;border:1.5px dashed #3a3a40;display:flex;align-items:center;justify-content:center;color:var(--mu);font-size:24px}
+.ch{display:flex;gap:8px}.ch span{flex:1;text-align:center;padding:11px 0;border-radius:12px;border:1px solid #2a2a2f;background:var(--card);font-size:14px;color:var(--mu)}.ch .on{background:var(--ivory);color:#0A0A0B;border-color:var(--ivory);font-weight:600}
+.segc{display:flex;background:var(--card);border:1px solid #2a2a2f;border-radius:14px;padding:4px;margin-bottom:8px}.segc span{flex:1;text-align:center;padding:9px 0;font-size:13.5px;color:var(--mu);border-radius:10px}.segc .on{background:#2a2a30;color:var(--tx);font-weight:600}
+.ctab{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 34px;background:linear-gradient(transparent,#0A0A0B 45%)}
+</style><style>em,i:not(.sb i){font-style:normal}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.oc{height:250px;border-radius:26px;background:var(--card);border:1px solid #2a2a2f;padding:18px;display:flex;flex-direction:column}
+.oc .ib{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center}
+.oc svg{width:28px;height:28px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.oc h4{font-family:'Instrument Serif',serif;font-weight:400;font-size:27px;line-height:1.02;margin-top:auto}
+.oc .h{font-size:12px;color:var(--mu);margin-top:8px}
+.oc .ar{position:absolute;top:18px;right:18px;color:var(--mu);font-size:18px}
+</style></head><body><div class="phone tall" id="p"><div class="sb"><span>9:41</span><i>●●● ▮</i></div>
+<div class="top"><div class="icbtn" style="color:var(--tx);font-size:14px">✕</div><div class="row" style="gap:8px;font-size:15px;font-weight:600"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:var(--teal);stroke-width:1.9;stroke-linecap:round"><path d="M12 13.5L5.5 6.5M12 13.5L18.5 6.5M12 13.5V20"/><circle cx="4.6" cy="5.5" r="1.9" fill="var(--teal)"/><circle cx="19.4" cy="5.5" r="1.9" fill="var(--teal)"/><circle cx="12" cy="20.6" r="1.9" fill="var(--teal)"/></svg> Originar produto</div><div class="mu" style="font-size:12px;width:52px;text-align:right">Etapa 3</div></div>
+<div class="pad" style="margin-top:22px">
+ <div class="chipsel">CRI · Crédito imobiliário <u>Alterar</u></div>
+ <h1 class="serif" style="font-size:40px;line-height:1.02;font-weight:400;margin-top:16px">Conte a história do seu produto</h1>
+ <p class="mu" style="font-size:14px;line-height:1.45;margin-top:10px">Investidores decidem pelo que veem e leem. Capriche nas imagens e na descrição.</p>
+ <div class="sh2">Fotos ou render</div>
+ <div class="media"><div class="cover">
+ <div style="position:absolute;left:-30px;top:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(242,169,59,.55),transparent 65%)"></div>
+ <div style="position:absolute;left:24px;bottom:0;width:46px;height:120px;background:linear-gradient(#2b5566,#17323d);border-radius:4px 4px 0 0"></div>
+ <div style="position:absolute;left:78px;bottom:0;width:60px;height:150px;background:linear-gradient(#3b6f80,#1d3f4c);border-radius:4px 4px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)"></div>
+ <div style="position:absolute;left:146px;bottom:0;width:40px;height:96px;background:linear-gradient(#2b5566,#17323d);border-radius:4px 4px 0 0"></div>
+ <div style="position:absolute;left:86px;bottom:20px;width:44px;height:110px;background:repeating-linear-gradient(180deg,rgba(242,169,59,.35) 0 4px,transparent 4px 14px)"></div>
+ <div style="position:absolute;left:0;right:0;bottom:0;height:22px;background:linear-gradient(transparent,rgba(30,154,168,.35))"></div>
+ <span style="position:absolute;left:10px;top:10px;font-size:10.5px;font-weight:600;background:rgba(10,10,11,.7);padding:4px 9px;border-radius:999px">Capa</span>
+</div><div style="display:grid;gap:10px"><div class="slot">+</div><div class="slot">+</div></div></div>
+ <div class="mu" style="font-size:11px;margin-top:8px">JPG ou PNG, até 10 MB. A primeira imagem será a capa.</div>
+ <div class="sh2">Produto</div>
+ <div class="fl2"><label>Nome do produto</label><div class="in ">CRI Residencial Jardins I</div></div>
+ <div class="fl2"><label>Descrição</label><div class="in ta foc"><div>Financiamento de 48 unidades residenciais em São Paulo, com recebíveis de vendas já contratadas e garantia de alienação fiduciária dos imóveis.<span class="caret" style="display:inline-block;width:2px;height:16px;background:var(--teal);vertical-align:-3px;margin-left:1px"></span></div><div class="cnt">143/600</div></div></div>
+ <div class="sh2">Captação</div>
+ <div class="fl2"><label>Valor alvo de captação</label><div class="in "><span><span class="mu">R$</span> 5.000.000,00</span></div></div>
+ <div class="fl2"><label>Prazo (meses)</label><div class="ch"><span>12</span><span>24</span><span class="on">36</span><span>48</span></div></div>
+ <div class="fl2"><label>Retorno ao investidor</label><div class="segc"><span class="on">CDI +</span><span>IPCA +</span><span>Prefixado</span></div><div class="in"><span>3,50</span><span class="mu">% a.a.</span></div></div>
+ <div class="sh2">Perfil do originador</div>
+ <div class="fl2"><label>Nome da empresa</label><div class="in ">Jardins Incorporadora Ltda.</div></div>
+ <div class="fl2"><label>Setor</label><div class="in ph"><span>Selecione o setor</span><span>⌄</span></div></div>
+ <div class="fl2"><label>CNPJ (opcional)</label><div class="in ph">00.000.000/0000-00</div></div>
+</div><div class="ctab"><button class="pill p-ivory">Avançar</button></div><div class="home-ind" style="z-index:3"></div></div></body></html>
